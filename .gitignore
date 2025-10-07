@@ -137,3 +137,10 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Astro
+frontend/.astro/
+frontend/dist/
+.env
+.env.local
+.env.*.local
