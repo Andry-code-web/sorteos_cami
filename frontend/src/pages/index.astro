@@ -1,12 +1,151 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import { CarouselDemo } from "@/components/CarouselDemo";
 ---
 
 <Layout title="Sorteos CAMI">
   <Header />
-  <main class="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+  <!--  <main class="flex flex-col items-center justify-center min-h-screen bg-gray-50">
     <h1 class="text-5xl font-bold text-gray-800 mb-4">🎉 Sorteos CAMI 🎉</h1>
     <p class="text-gray-600 text-lg">Sistema de gestión de sorteos y validación de DNI</p>
+  </main> -->
+  <main class="w-full h-full">
+    <!-- banner -->
+    <section
+      class="w-full h-[85vh] bg-[url('/banner.webp')] object-cover bg-top"
+    >
+    </section>
+
+    <section class="w-full h-[50vh]">
+      <div
+        class="w-2/3 h-full mx-auto flex justify-center items-center gap-10 relative"
+      >
+        <!-- info -->
+        <div class="w-1/2 p-5">
+          <h3 class="font-medium font-sans text-2xl">
+            Overcoming Cancer Were Nothing Compared to My Latest Struggle
+          </h3>
+          <p class="font-sans font-medium text-[#777] mt-5">
+            We finally got a piece of the pie. we might as well say Would you be
+            mine? Could you be mine? Won't you be my neighbor We're gonna do it.
+            On your mark get set and go now Got a dream and we just know.
+          </p>
+          <p class="font-sans font-medium text-[#777] mt-5">
+            Now we're gonna make our dream come true. You wanna be where you can
+            see our troubles are all the same. You wanna be where everybody.
+          </p>
+        </div>
+
+        <div class="w-1/2"></div>
+
+        <!-- card time -->
+        <div class="w-1/2 absolute top-[-5rem] right-0">
+          <div class="w-4/5 flex justify-between bg-[#FAFAFA] p-5">
+            <div class="flex flex-col gap-2">
+              <h2
+                class="font-medium text-xl text-green-600 uppercase font-sans"
+              >
+                El sorteo comienza en:
+              </h2>
+              <p class="font-sans flex gap-4 text-gray-500 font-medium text-sm">
+                <span>
+                  <i class="ri-time-line font-semibold"></i>
+                </span>
+                <span> Nov - 14 2015 </span>
+                <span> 3:00 pm </span>
+              </p>
+            </div>
+
+            <div class="flex items-center">
+              <i class="ri-calendar-2-line text-4xl text-green-600"></i>
+            </div>
+          </div>
+
+          <!-- time -->
+          <div class="w-4/5 flex justify-between items-center gap-3 mt-[5rem]">
+            <div class="flex flex-col justify-center items-center w-1/4">
+              <p class="uppercase font-sans font-medium text-base">dias</p>
+              <div
+                class="w-full h-[10rem] flex flex-col justify-around items-center mt-7 bg-[#FAFAFA]"
+              >
+                <p class="font-sans font-medium text-5xl text-[#5cb85c]">00</p>
+                <p class="">2015</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-center w-1/4">
+              <p class="uppercase font-sans font-medium text-base">horas</p>
+              <div
+                class="w-full h-[10rem] flex flex-col justify-around items-center mt-7 bg-[#FAFAFA]"
+              >
+                <p class="font-sans font-medium text-5xl text-[#5cb85c]">00</p>
+                <p class="">2015</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-center w-1/4">
+              <p class="uppercase font-sans font-medium text-base">mins</p>
+              <div
+                class="w-full h-[10rem] flex flex-col justify-around items-center mt-7 bg-[#FAFAFA]"
+              >
+                <p class="font-sans font-medium text-5xl text-[#5cb85c]">00</p>
+                <p class="">2015</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-center w-1/4">
+              <p class="uppercase font-sans font-medium text-base">secs</p>
+              <div
+                class="w-full h-[10rem] flex flex-col justify-around items-center mt-7 bg-[#FAFAFA]"
+              >
+                <p class="font-sans font-medium text-5xl text-[#5cb85c]">00</p>
+                <p class="">2015</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-4/5 flex justify-between items-center gap-10 mt-[2rem]">
+            <a
+              href=""
+              class="w-1/2 h-14 bg-[#499449] text-white flex items-center justify-center font-sans font-medium text-md"
+              >Ver mas eventos</a
+            >
+            <a
+              href=""
+              class="w-1/2 h-14 text-black flex items-center font-sans font-normal text-md"
+              >Join now</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto">
+      <CarouselDemo client:load />
+    </div>
+
+    <section class="w-full h-full mt-10">
+      <div>
+        <h2></h2>
+        <p></p>
+      </div>
+
+      <!--  <div>
+        <div>
+          <img src="" alt="">
+          <p>Donation: 53,458 / 100,000</p>
+          <h4>Donate For Homeless People</h4>
+          <p>Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.</p>
+          <div class="flex items-center gap-3">
+            <a href="/">Participar ya</a>
+            <a href="/">Ver mas</a>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div> -->
+    </section>
   </main>
 </Layout>
