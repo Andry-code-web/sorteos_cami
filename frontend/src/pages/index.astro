@@ -1,11 +1,12 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Sorteos CAMI">
+  <Header />
+  <main class="flex flex-col items-center justify-center min-h-screen bg-gray-50">
+    <h1 class="text-5xl font-bold text-gray-800 mb-4">🎉 Sorteos CAMI 🎉</h1>
+    <p class="text-gray-600 text-lg">Sistema de gestión de sorteos y validación de DNI</p>
+  </main>
 </Layout>
