@@ -1,22 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
 import { CarouselDemo } from "@/components/CarouselDemo";
+import { NavbarDemo } from "@/components/resizable-navbar";
+import { StickyBannerDemo } from "@/components/sticky-banner";
+import { WavyBackground } from "@/components/ui/wavy-background";
 ---
 
+<StickyBannerDemo client:load />
 <Layout title="Sorteos CAMI">
-  <Header />
-  <!--  <main class="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-    <h1 class="text-5xl font-bold text-gray-800 mb-4">🎉 Sorteos CAMI 🎉</h1>
-    <p class="text-gray-600 text-lg">Sistema de gestión de sorteos y validación de DNI</p>
-  </main> -->
+  <NavbarDemo client:load />
   <main class="w-full h-full">
-    <!-- banner -->
-    <section
-      class="w-full h-[85vh] bg-[url('/banner.webp')] object-cover bg-top"
-    >
-    </section>
-
     <section class="w-full h-[50vh]">
       <div
         class="w-2/3 h-full mx-auto flex justify-center items-center gap-10 relative"
@@ -39,8 +32,11 @@ import { CarouselDemo } from "@/components/CarouselDemo";
 
         <div class="w-1/2"></div>
 
+        
+
+
         <!-- card time -->
-        <div class="w-1/2 absolute top-[-5rem] right-0">
+       <!--  <div class="w-1/2 absolute top-[-5rem] right-0">
           <div class="w-4/5 flex justify-between bg-[#FAFAFA] p-5">
             <div class="flex flex-col gap-2">
               <h2
@@ -62,7 +58,6 @@ import { CarouselDemo } from "@/components/CarouselDemo";
             </div>
           </div>
 
-          <!-- time -->
           <div class="w-4/5 flex justify-between items-center gap-3 mt-[5rem]">
             <div class="flex flex-col justify-center items-center w-1/4">
               <p class="uppercase font-sans font-medium text-base">dias</p>
@@ -117,7 +112,10 @@ import { CarouselDemo } from "@/components/CarouselDemo";
               >Join now</a
             >
           </div>
-        </div>
+        </div> -->
+      
+      <WavyBackground client:load />
+      
       </div>
     </section>
 
@@ -125,27 +123,13 @@ import { CarouselDemo } from "@/components/CarouselDemo";
       <CarouselDemo client:load />
     </div>
 
+    
+
     <section class="w-full h-full mt-10">
       <div>
         <h2></h2>
         <p></p>
       </div>
-
-      <!--  <div>
-        <div>
-          <img src="" alt="">
-          <p>Donation: 53,458 / 100,000</p>
-          <h4>Donate For Homeless People</h4>
-          <p>Totam rem aperiam, eaque ipsa quae ab illosa inventore veritatis et quasi.</p>
-          <div class="flex items-center gap-3">
-            <a href="/">Participar ya</a>
-            <a href="/">Ver mas</a>
-          </div>
-        </div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div> -->
     </section>
   </main>
 </Layout>
