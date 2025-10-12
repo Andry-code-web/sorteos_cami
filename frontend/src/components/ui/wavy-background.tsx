@@ -62,12 +62,14 @@ export const WavyBackground = ({
   };
 
   const waveColors = colors ?? [
-    "#38bdf8",
-    "#818cf8",
-    "#c084fc",
-    "#e879f9",
-    "#22d3ee",
+    "#16a34a", // verde intenso - base (Tailwind green-600)
+    "#22c55e", // verde éxito - destaca sin saturar (green-500)
+    "#86efac", // verde menta - luz y frescura (green-300)
+    "#a3e635", // verde-lima - toque de energía (lime-400)
+    "#d9f99d", // casi amarillo - vibrante y de “suerte”
   ];
+
+
   const drawWave = (n: number) => {
     nt += getSpeed();
     for (i = 0; i < n; i++) {
@@ -104,30 +106,32 @@ export const WavyBackground = ({
     // I'm sorry but i have got to support it on safari.
     setIsSafari(
       typeof window !== "undefined" &&
-        navigator.userAgent.includes("Safari") &&
-        !navigator.userAgent.includes("Chrome")
+      navigator.userAgent.includes("Safari") &&
+      !navigator.userAgent.includes("Chrome")
     );
   }, []);
 
   return (
     <div
       className={cn(
-        "h-screen flex flex-col items-center justify-center",
+        "relative h-full flex flex-col items-center justify-center overflow-hidden",
         containerClassName
       )}
     >
       <canvas
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 w-full h-full z-0"
         ref={canvasRef}
         id="canvas"
         style={{
           ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
         }}
       ></canvas>
+
       <div className={cn("relative z-10", className)} {...props}>
         {children}
       </div>
     </div>
+
   );
 };
 

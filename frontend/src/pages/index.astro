@@ -4,6 +4,8 @@ import { CarouselDemo } from "@/components/CarouselDemo";
 import { NavbarDemo } from "@/components/resizable-navbar";
 import { StickyBannerDemo } from "@/components/sticky-banner";
 import { WavyBackground } from "@/components/ui/wavy-background";
+import { StickyScrollRevealDemo } from "@/components/sticky-scroll-revealDemo";
+import { HeroParallaxDemo } from "@/components/hero-parallaxDemo";
 ---
 
 <StickyBannerDemo client:load />
@@ -11,125 +13,75 @@ import { WavyBackground } from "@/components/ui/wavy-background";
   <NavbarDemo client:load />
   <main class="w-full h-full">
     <section class="w-full h-[50vh]">
-      <div
-        class="w-2/3 h-full mx-auto flex justify-center items-center gap-10 relative"
-      >
-        <!-- info -->
-        <div class="w-1/2 p-5">
-          <h3 class="font-medium font-sans text-2xl">
-            Overcoming Cancer Were Nothing Compared to My Latest Struggle
-          </h3>
-          <p class="font-sans font-medium text-[#777] mt-5">
-            We finally got a piece of the pie. we might as well say Would you be
-            mine? Could you be mine? Won't you be my neighbor We're gonna do it.
-            On your mark get set and go now Got a dream and we just know.
-          </p>
-          <p class="font-sans font-medium text-[#777] mt-5">
-            Now we're gonna make our dream come true. You wanna be where you can
-            see our troubles are all the same. You wanna be where everybody.
-          </p>
+      <WavyBackground client:load>
+        <p
+          class="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center mb-10"
+        >
+          El sorteo comienza en:
+        </p>
+        <div class="flex items-center justify-center gap-4 mb-12">
+          <!-- Días -->
+          <div
+            class="bg-gradient-to-br from-green-400 to-green-600 rounded-3xl p-6 w-32 h-32 flex flex-col items-center justify-center shadow-xl"
+          >
+            <div id="days" class="text-5xl font-bold text-white mb-1">00</div>
+            <div class="text-white text-sm font-medium opacity-90">Días</div>
+          </div>
+
+          <span class="text-4xl font-bold text-white">:</span>
+
+          <!-- Horas -->
+          <div
+            class="bg-gradient-to-br from-green-400 to-green-600 rounded-3xl p-6 w-32 h-32 flex flex-col items-center justify-center shadow-xl"
+          >
+            <div id="hours" class="text-5xl font-bold text-white mb-1">00</div>
+            <div class="text-white text-sm font-medium opacity-90">Horas</div>
+          </div>
+
+          <span class="text-4xl font-bold text-white">:</span>
+
+          <!-- Minutos -->
+          <div
+            class="bg-gradient-to-br from-green-400 to-green-600 rounded-3xl p-6 w-32 h-32 flex flex-col items-center justify-center shadow-xl"
+          >
+            <div id="minutes" class="text-5xl font-bold text-white mb-1">
+              00
+            </div>
+            <div class="text-white text-sm font-medium opacity-90">Minutos</div>
+          </div>
+
+          <span class="text-4xl font-bold text-white">:</span>
+
+          <!-- Segundos -->
+          <div
+            class="bg-gradient-to-br from-green-400 to-green-600 rounded-3xl p-6 w-32 h-32 flex flex-col items-center justify-center shadow-xl"
+          >
+            <div id="seconds" class="text-5xl font-bold text-white mb-1">
+              00
+            </div>
+            <div class="text-white text-sm font-medium opacity-90">
+              Segundos
+            </div>
+          </div>
         </div>
-
-        <div class="w-1/2"></div>
-
-        
-
-
-        <!-- card time -->
-       <!--  <div class="w-1/2 absolute top-[-5rem] right-0">
-          <div class="w-4/5 flex justify-between bg-[#FAFAFA] p-5">
-            <div class="flex flex-col gap-2">
-              <h2
-                class="font-medium text-xl text-green-600 uppercase font-sans"
-              >
-                El sorteo comienza en:
-              </h2>
-              <p class="font-sans flex gap-4 text-gray-500 font-medium text-sm">
-                <span>
-                  <i class="ri-time-line font-semibold"></i>
-                </span>
-                <span> Nov - 14 2015 </span>
-                <span> 3:00 pm </span>
-              </p>
-            </div>
-
-            <div class="flex items-center">
-              <i class="ri-calendar-2-line text-4xl text-green-600"></i>
-            </div>
-          </div>
-
-          <div class="w-4/5 flex justify-between items-center gap-3 mt-[5rem]">
-            <div class="flex flex-col justify-center items-center w-1/4">
-              <p class="uppercase font-sans font-medium text-base">dias</p>
-              <div
-                class="w-full h-[10rem] flex flex-col justify-around items-center mt-7 bg-[#FAFAFA]"
-              >
-                <p class="font-sans font-medium text-5xl text-[#5cb85c]">00</p>
-                <p class="">2015</p>
-              </div>
-            </div>
-
-            <div class="flex flex-col justify-center items-center w-1/4">
-              <p class="uppercase font-sans font-medium text-base">horas</p>
-              <div
-                class="w-full h-[10rem] flex flex-col justify-around items-center mt-7 bg-[#FAFAFA]"
-              >
-                <p class="font-sans font-medium text-5xl text-[#5cb85c]">00</p>
-                <p class="">2015</p>
-              </div>
-            </div>
-
-            <div class="flex flex-col justify-center items-center w-1/4">
-              <p class="uppercase font-sans font-medium text-base">mins</p>
-              <div
-                class="w-full h-[10rem] flex flex-col justify-around items-center mt-7 bg-[#FAFAFA]"
-              >
-                <p class="font-sans font-medium text-5xl text-[#5cb85c]">00</p>
-                <p class="">2015</p>
-              </div>
-            </div>
-
-            <div class="flex flex-col justify-center items-center w-1/4">
-              <p class="uppercase font-sans font-medium text-base">secs</p>
-              <div
-                class="w-full h-[10rem] flex flex-col justify-around items-center mt-7 bg-[#FAFAFA]"
-              >
-                <p class="font-sans font-medium text-5xl text-[#5cb85c]">00</p>
-                <p class="">2015</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="w-4/5 flex justify-between items-center gap-10 mt-[2rem]">
-            <a
-              href=""
-              class="w-1/2 h-14 bg-[#499449] text-white flex items-center justify-center font-sans font-medium text-md"
-              >Ver mas eventos</a
-            >
-            <a
-              href=""
-              class="w-1/2 h-14 text-black flex items-center font-sans font-normal text-md"
-              >Join now</a
-            >
-          </div>
-        </div> -->
-      
-      <WavyBackground client:load />
-      
-      </div>
+      </WavyBackground>
     </section>
 
     <div class="max-w-7xl mx-auto">
+      <p
+        class="text-2xl md:text-4xl lg:text-5xl text-green-500 font-bold inter-var text-center uppercase mt-24"
+      >
+        Premiazos que puedes ganar
+      </p>
       <CarouselDemo client:load />
     </div>
 
-    
 
-    <section class="w-full h-full mt-10">
-      <div>
-        <h2></h2>
-        <p></p>
-      </div>
-    </section>
+
+    <StickyScrollRevealDemo client:load/>
+
+
+      <HeroParallaxDemo client:load/>
+    
   </main>
 </Layout>

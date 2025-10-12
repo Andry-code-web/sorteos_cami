@@ -111,9 +111,9 @@ const DummyContent = () => {
           <h1 className="text-center">
             <TextGenerateEffect words={words} variant="title" />
           </h1>
-          <p className="">
+          
            <TextGenerateEffect words={words2} variant="subtitle"/>
-          </p>
+
         </div>
         <div className="w-3/5">
           <LayoutGridDemo />
