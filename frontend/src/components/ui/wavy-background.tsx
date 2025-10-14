@@ -62,12 +62,13 @@ export const WavyBackground = ({
   };
 
   const waveColors = colors ?? [
-    "#16a34a", // verde intenso - base (Tailwind green-600)
-    "#22c55e", // verde éxito - destaca sin saturar (green-500)
-    "#86efac", // verde menta - luz y frescura (green-300)
-    "#a3e635", // verde-lima - toque de energía (lime-400)
-    "#d9f99d", // casi amarillo - vibrante y de “suerte”
+    "#b91c1c", // rojo intenso (Tailwind red-700) — tono base
+    "#ef4444", // rojo brillante (red-500) — vibrante y cálido
+    "#f87171", // coral suave (red-400) — da transición agradable
+    "#fb923c", // naranja cálido (orange-400) — energía y fuego
+    "#fde68a", // dorado claro (amber-200) — luz y contraste
   ];
+
 
 
   const drawWave = (n: number) => {

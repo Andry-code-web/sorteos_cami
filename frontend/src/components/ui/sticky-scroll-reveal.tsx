@@ -22,9 +22,11 @@ export const StickyScroll = ({
   // El target es el ref, lo que hace que el scrollYProgress se calcule 
   // basándose en el desplazamiento del ref en la ventana.
   const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
+  target: ref,
+  offset: ["start start", "end start"], // este suele ir mejor dentro de contenedores
+});
+
+
 
   const cardLength = content.length;
 

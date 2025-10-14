@@ -14,6 +14,8 @@ import { useState } from "react";
 
 import { LayoutGridDemo } from "@/components/layout-gridDemo";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { ColourfulTextDemo } from "@/components/colourful-textDemo";
+import ColourfulText from "@/components/ui/colourful-text";
 
 
 export function NavbarDemo() {
@@ -43,7 +45,9 @@ export function NavbarDemo() {
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
-          <NavbarLogo />
+          <h1 className="text-2xl md:text-xl lg:text-2xl font-bold text-center text-white relative z-2 font-sans">
+            <ColourfulText text="Premios Cleosaki" />
+          </h1>
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <NavbarButton variant="gradient">Chat con Cami</NavbarButton>
@@ -101,23 +105,23 @@ export function NavbarDemo() {
 }
 
 const words = `Los mejores sorteos y premios estan a tu alcance.`;
-const words2 = ` For demo purpose we have kept the position as Keep in mind that this component is  and will not move when scrolling.`;
+const words2 = `Inscríbete para ser ganador de grandes premios semana a semana, con tan solo S/ 10 al mes. Recibe la Revista REMATES PERU todos los Martes`;
 
 const DummyContent = () => {
   return (
-      <div className="w-[90%] mx-auto p-8 pt-5 flex justify-center items-center">
-        <div className="w-1/4">
-          
-          <h1 className="text-center">
-            <TextGenerateEffect words={words} variant="title" />
-          </h1>
-          
-           <TextGenerateEffect words={words2} variant="subtitle"/>
+    <div className="w-[90%] mx-auto p-8 pt-5 flex justify-center items-center">
+      <div className="w-1/4">
 
-        </div>
-        <div className="w-3/5">
-          <LayoutGridDemo />
-        </div>
+        <h1 className="text-center">
+          <TextGenerateEffect words={words} variant="title" />
+        </h1>
+
+        <TextGenerateEffect words={words2} variant="subtitle" />
+
       </div>
+      <div className="w-3/5">
+        <LayoutGridDemo />
+      </div>
+    </div>
   );
 };

@@ -5,24 +5,24 @@ import Carousel from "@/components/ui/carousel";
 export function CarouselDemo() {
   const slideData = [
     {
-      title: "Mystic Mountains",
-      button: "Explore Component",
-      src: "https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=3534&auto=format&fit=crop",
+      title: "Celular Magic Pro",
+      button: "Comprar Ticket",
+      src: "banner_celular.png",
     },
     {
-      title: "Urban Dreams",
-      button: "Explore Component",
-      src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop",
+      title: "Laptop Magic Pro",
+      button: "Comprar Ticket",
+      src: "banner_laptop.png",
     },
     {
-      title: "Neon Nights",
-      button: "Explore Component",
-      src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop",
+      title: "Tablet Magic Pro",
+      button: "Comprar Ticket",
+      src: "banner_tablet.png",
     },
     {
-      title: "Desert Whispers",
-      button: "Explore Component",
-      src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop",
+      title: "Computadora Magic Pro",
+      button: "Comprar Ticket",
+      src: "banner_compu.png",
     },
   ];
 
