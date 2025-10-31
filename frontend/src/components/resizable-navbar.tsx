@@ -22,19 +22,19 @@ export function NavbarDemo() {
   const navItems = [
     {
       name: "Inicio",
-      link: "#features",
+      link: "/",
     },
     {
       name: "Ver premios",
-      link: "#pricing",
+      link: "/#premios",
     },
     {
       name: "Mis tickets",
-      link: "#contact",
+      link: "/mis-tickets",
     },
     {
       name: "Ganadores",
-      link: "#contact",
+      link: "/#ganadores",
     },
   ];
 
