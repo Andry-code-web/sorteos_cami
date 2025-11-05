@@ -26,15 +26,44 @@ exports.getClienteByDni = async (req, res) => {
 
 // Crear cliente nuevo
 exports.createCliente = async (req, res) => {
-  const { dni, nombres, apellidos, celular, email } = req.body;
   try {
-    const [result] = await db.query(
-      "INSERT INTO clientes (dni, nombres, apellidos, celular, email) VALUES (?, ?, ?, ?, ?)",
-      [dni, nombres, apellidos, celular, email]
+    const { dni, nombres, apellidos, celular, email } = req.body;
+
+    console.log(req.body);
+    
+
+    // Validar campos requeridos
+    const camposFaltantes = [];
+    if (!dni) camposFaltantes.push("dni");
+    if (!nombres) camposFaltantes.push("nombres");
+    if (!apellidos) camposFaltantes.push("apellidos");
+    if (!celular) camposFaltantes.push("celular");
+    if (!email) camposFaltantes.push("email");
+    if (!req.file) camposFaltantes.push("voucher");
+
+    if (camposFaltantes.length > 0) {
+      return res.status(400).json({
+        message: `Faltan los siguientes campos: ${camposFaltantes.join(", ")}`
+      });
+    }
+
+    // Convertir imagen a Base64
+    const voucherBase64 = req.file.buffer.toString("base64");
+
+    // Insertar en la base de datos
+    const [result] = await db.execute(
+      `INSERT INTO clientes (dni, nombres, apellidos, celular, email, voucher)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [dni, nombres, apellidos, celular, email, voucherBase64]
     );
-    res.status(201).json({ id: result.insertId, dni, nombres, apellidos, celular, email });
+
+    res.status(201).json({
+      message: "✅ Cliente creado exitosamente",
+      id: result.insertId,
+    });
   } catch (error) {
-    res.status(500).json({ message: "Error al crear cliente", error });
+    console.error("Error al crear cliente:", error);
+    res.status(500).json({ message: "❌ Error al crear cliente", error });
   }
 };
 

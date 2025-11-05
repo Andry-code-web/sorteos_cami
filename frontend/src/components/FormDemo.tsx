@@ -10,47 +10,59 @@ import {
 } from "@tabler/icons-react";
 
 export function SignupFormDemo() {
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("Form submitted");
+        const formData = new FormData(e.currentTarget);
+
+        const res = await fetch("http://localhost:3000/api/clientes", {
+            method: "POST",
+            body: formData,
+        });
+
+        const data = await res.json();
+        console.log(data);
     };
+
     return (
         <div className="shadow-input w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
             <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
                 Registra tu Voucher
             </h2>
             <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-                Ingresa tus datos para comunicarnos encaso salgas ganador.
+                Ingresa tus datos para comunicarnos en caso salgas ganador.
             </p>
 
             <form className="my-8" onSubmit={handleSubmit}>
                 <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
                     <LabelInputContainer>
-                        <Label htmlFor="firstname">Nombres*</Label>
-                        <Input id="firstname" placeholder="Carlos" type="text" />
+                        <Label htmlFor="nombres">Nombres*</Label>
+                        <Input id="nombres" name="nombres" placeholder="Carlos" type="text" />
                     </LabelInputContainer>
                     <LabelInputContainer>
-                        <Label htmlFor="lastname">Apellidos*</Label>
-                        <Input id="lastname" placeholder="Perez" type="text" />
+                        <Label htmlFor="apellidos">Apellidos*</Label>
+                        <Input id="apellidos" name="apellidos" placeholder="Perez" type="text" />
                     </LabelInputContainer>
                 </div>
+
                 <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
                     <LabelInputContainer>
-                        <Label htmlFor="firstname">DNI*</Label>
-                        <Input id="firstname" placeholder="45874345" type="number" />
+                        <Label htmlFor="dni">DNI*</Label>
+                        <Input id="dni" name="dni" placeholder="45874345" type="number" />
                     </LabelInputContainer>
                     <LabelInputContainer>
-                        <Label htmlFor="lastname">Celular*</Label>
-                        <Input id="lastname" placeholder="924836878" type="tel" />
+                        <Label htmlFor="celular">Celular*</Label>
+                        <Input id="celular" name="celular" placeholder="924836878" type="tel" />
                     </LabelInputContainer>
                 </div>
+
                 <LabelInputContainer className="mb-4">
                     <Label htmlFor="email">Correo*</Label>
-                    <Input id="email" placeholder="projectmayhem@gmail.com" type="email" />
+                    <Input id="email" name="email" placeholder="projectmayhem@gmail.com" type="email" />
                 </LabelInputContainer>
+
                 <LabelInputContainer className="mb-4">
-                    <Label htmlFor="file">Subir Voucher*</Label>
-                    <Input id="password" placeholder="********" type="file" />
+                    <Label htmlFor="voucher">Subir Voucher*</Label>
+                    <Input id="voucher" name="voucher" type="file" />
                 </LabelInputContainer>
 
                 <button
@@ -64,6 +76,7 @@ export function SignupFormDemo() {
         </div>
     );
 }
+
 
 const BottomGradient = () => {
     return (
