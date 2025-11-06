@@ -5,5 +5,4 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), react()],
   server: { port: 4321 },
-  outDir: './dist'
 });
