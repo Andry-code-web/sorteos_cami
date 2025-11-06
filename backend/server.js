@@ -22,4 +22,5 @@ app.use("/api/ganadores", ganadoresRoutes);
 // 🧩 Ruta base
 app.get("/", (req, res) => res.send("API de sorteos funcionando 🚀"));
 
-app.listen(3000, () => console.log("✅ Servidor corriendo en el puerto 3000"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`✅ Servidor corriendo en el puerto ${PORT}`));
